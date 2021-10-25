@@ -1,41 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
-
-const msPerMin = 60000;
-
-function getTimeDifference(arrivalTime: string, departureTime: string): number {
-  const getDate = (string: string) => new Date(2021, 0, 1, Number(string.split(':')[0]), Number(string.split(':')[1]))
-  return (getDate(departureTime).getTime() - getDate(arrivalTime).getTime()) / msPerMin
-}
+import { timeData, minPerHour } from '../utils/consts';
+import getTimeDifference from '../utils/utils';
+import { ITimeData } from '../utils/interfaces';
 
 function App() {
-
-  interface ITimeData {
-    arrivalValueMon: string,
-    departureValueMon: string,
-    arrivalValueTue: string,
-    departureValueTue: string,
-    arrivalValueWed: string,
-    departureValueWed: string,
-    arrivalValueThu: string,
-    departureValueThu: string,
-    arrivalValueFri: string,
-    departureValueFri: string
-  }
-
-  const timeData = {
-    arrivalValueMon: '00:00',
-    departureValueMon: '00:00',
-    arrivalValueTue: '00:00',
-    departureValueTue: '00:00',
-    arrivalValueWed: '00:00',
-    departureValueWed: '00:00',
-    arrivalValueThu: '00:00',
-    departureValueThu: '00:00',
-    arrivalValueFri: '00:00',
-    departureValueFri: '00:00'
-  }
-
   const [data, setData] = useState(timeData)
   const [amount, setAmount] = useState(0);
   const [ratePerHour, setRatePerHour] = useState(0);
@@ -78,7 +47,7 @@ function App() {
       getTimeDifference(arrivalValueFri, departureValueFri)
     ]
 
-    const amountOnHand = (times.reduce((prevValue, currValue) => prevValue + currValue)) * ratePerHour / 60 
+    const amountOnHand = (times.reduce((prevValue, currValue) => prevValue + currValue)) * ratePerHour / minPerHour 
     setAmount(amountOnHand)
     setData(timeData)
   }
