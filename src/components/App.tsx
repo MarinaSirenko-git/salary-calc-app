@@ -18,7 +18,7 @@ function App() {
       }
     })
   }
-
+  
   const handleRateInputChange = (e: React.FormEvent<HTMLInputElement>): void => {
     const { value } = e.target as HTMLInputElement
     setRatePerHour(Number(value))
@@ -48,13 +48,18 @@ function App() {
     ]
 
     const amountOnHand = (times.reduce((prevValue, currValue) => prevValue + currValue)) * ratePerHour / minPerHour 
-    setAmount(amountOnHand)
+    setAmount(amountOnHand)  
+  }
+
+  const handleBtnReset = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault()
+    setRatePerHour(0)
     setData(timeData)
   }
 
   return (
     <div className="App">
-      <form onSubmit={handleBtnSubmit}>
+      <form onSubmit={handleBtnSubmit} onReset={handleBtnReset}>
         <fieldset>
           <legend>ставка за час</legend>
           <input type="text" value={ratePerHour} onChange={handleRateInputChange} />
@@ -85,6 +90,7 @@ function App() {
           <input type="time" name="departureValueFri" value={data.departureValueFri} onChange={handleTimeInputChange} />
         </fieldset>
         <button type="submit">Посчитать</button>
+        <button type="reset">Очистить поля</button>
       </form>
       <div className="output">{amount}</div>
     </div>
