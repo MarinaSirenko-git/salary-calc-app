@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/salary-calc-app/static/css/main.b561c8bc.chunk.css",
-    "main.js": "/salary-calc-app/static/js/main.c8fa7b2b.chunk.js",
-    "main.js.map": "/salary-calc-app/static/js/main.c8fa7b2b.chunk.js.map",
+    "main.js": "/salary-calc-app/static/js/main.d356dbe9.chunk.js",
+    "main.js.map": "/salary-calc-app/static/js/main.d356dbe9.chunk.js.map",
     "runtime-main.js": "/salary-calc-app/static/js/runtime-main.52e6a20e.js",
     "runtime-main.js.map": "/salary-calc-app/static/js/runtime-main.52e6a20e.js.map",
     "static/js/2.b06d10b3.chunk.js": "/salary-calc-app/static/js/2.b06d10b3.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.52e6a20e.js",
     "static/js/2.b06d10b3.chunk.js",
     "static/css/main.b561c8bc.chunk.css",
-    "static/js/main.c8fa7b2b.chunk.js"
+    "static/js/main.d356dbe9.chunk.js"
   ]
 }
